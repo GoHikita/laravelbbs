@@ -13,9 +13,8 @@ class PostsController extends Controller
 
       return view('posts.index',['posts'=>$posts]);
     }
-}
 
-public function create() //何かが足りない可能性のあるエラー表示が出ますが、どこが違うのか分かりません。
+public function create() 
 {
     return view('posts.create');
 }
@@ -30,4 +29,16 @@ public function store(Request $request)
     Post::create($params);
 
     return redirect()->route('top');
+}
+
+public function show($post_id)
+{
+  $post=Post::findOrFail($post_id);
+
+  return view('posts.show',[
+    'post'=>$post,
+  ]);
+}
+
+
 }

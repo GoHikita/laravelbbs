@@ -12,7 +12,7 @@
 
                 <fieldset class="mb-4">
                     <div class="form-group">
-                        <label for="title">
+                        <label="title">
                             タイトル
                         </label>
                         <input
@@ -23,10 +23,11 @@
                             type="text"
                         >
                         @if ($errors->has('title'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
+                             <div class="invalid-feedback">
+                                 {{ $errors->first('title') }}
                             </div>
-                        @endif
+
+                         @endif
                     </div>
 
                     <div class="form-group">
@@ -38,7 +39,7 @@
                             id="body"
                             name="body"
                             class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}"
-                            rows="4"
+                             rows="4"
                         >{{ old('body') }}</textarea>
                         @if ($errors->has('body'))
                             <div class="invalid-feedback">
