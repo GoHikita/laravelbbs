@@ -15,7 +15,7 @@
                     <a class="card-link" href="{{route('posts.show',['post'=>$post])}}">
                       続きを読む
                     </a>
-                    
+
                 </div>
                 <div class="card-footer">
                     <span class="mr-2">
@@ -31,8 +31,13 @@
             </div>
         @endforeach
     </div>
-    <div class="mb-4">
+    <div class="m-4">
       <a href="{{route('posts.create')}}" class="btn btn-primary">
         投稿を新規作成する
       </a>
+    </div>
+    <div  class="mx-auto" style="width: 200px;">
+    <p class="ml-4 badge badge-primary">ページリンク</p>
+    {{ $posts->links() }}
+    </div>
 @endsection
