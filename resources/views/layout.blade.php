@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>Laravel BBS</title>
@@ -14,7 +14,7 @@
 <body>
     <header class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('') }}">
+            <a class="navbar-brand" href="{{ url('bbs') }}">
                 Laravel BBS
             </a>
         </div>

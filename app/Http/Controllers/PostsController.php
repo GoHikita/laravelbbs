@@ -9,9 +9,15 @@ class PostsController extends Controller
 {
     public function index()
     {
-      $posts=Post::with(['comments'])->orderBy('created_at','desc')->paginate(10);
+      return view('posts.top');
 
-      return view('posts.index',['posts'=>$posts]);
+    }
+
+    public function bbs()
+    {
+      $posts = Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
+
+      return view('posts.bbs',['posts'=>$posts]);
     }
 
 public function create()
@@ -28,7 +34,7 @@ public function store(Request $request)
 
     Post::create($params);
 
-    return redirect()->route('top');
+    return redirect()->route('bbsTop');
 }
 
 public function show($post_id)
@@ -70,7 +76,7 @@ public function destroy($post_id)
     $post->delete();
   });
 
-  return redirect()->route('top');
+  return redirect()->route('bbsTop');
 }
 
 
